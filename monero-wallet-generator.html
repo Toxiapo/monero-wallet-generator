@@ -8551,6 +8551,13 @@ var aeonConfig = {
     coinUriPrefix: 'aeon:',
     addressPrefix: 0xB2
 };
+var lokiConfig = {
+    coinUnitPlaces: 12,
+    coinSymbol: 'LOKI',
+    coinName: 'Loki',
+    coinUriPrefix: 'loki:',
+    addressPrefix: 114
+};
 var cnUtilGen = function(initConfig) {
     //var config = $.extend({}, initConfig);
     var config = initConfig;
@@ -10728,6 +10735,7 @@ bC0zLjUsMjAuNGgtNkwyNDQuOCwzMTAuNkwyNDQuOCwzMTAuNnoiLz4KPC9nPgo8L3N2Zz4K">
                 <select onchange="js:setCoin(this.selectedIndex);" class="waves-effect waves-light btn" style="max-width: 20%">
                   <option>Monero</option>
                   <option>Aeon</option>
+                  <option>Loki</option>
                 </select>
                 wallet. It is self contained and
                 does all the necessary calculations locally, so is suitable for generating a new wallet on a machine
@@ -11199,6 +11207,12 @@ function setCoin(index)
     prefix_widget.value = "W";
     enable = false
     language = "electrum"
+  }
+  else if (index == 2) {
+    cnUtil = cnUtilGen(lokiConfig);
+    prefix_widget.value = "L";
+    enable = false
+    language = "english"
   }
   enableLanguage("en", enable)
   enableLanguage("es", enable)
